@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nichia Marjono — Portfolio</title>
+<meta name="description" content="Nichia Marjono — copywriter, video editor, and graphic designer turning stories into tangible things.">
+
+<!-- Fonts: Fraunces (premium display serif), Manrope (clean paragraph sans), Caveat (handwritten accent) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Scroll progress bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ============ NAV ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">Nichia Marjono</a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" class="nav-link">About</a>
+
+      <div class="nav-dropdown">
+        <a href="#work" class="nav-link nav-dropdown__trigger">
+          Work
+          <svg class="nav-dropdown__chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1.5 6 6.5 11 1.5"/></svg>
+        </a>
+        <div class="nav-dropdown__panel">
+          <div class="nav-dropdown__panel-inner">
+          <div class="nav-dropdown__cat">
+            <span>Copywriting</span>
+            <svg class="nav-dropdown__cat-arrow" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 1 7 4 1 7"/></svg>
+            <div class="nav-dropdown__sub">
+              <div class="nav-dropdown__sub-inner">
+              <a href="aitai.html">AITAI</a>
+              <a href="ppia.html">PPIA</a>
+              </div>
+            </div>
+          </div>
+          <div class="nav-dropdown__cat">
+            <span>Marketing Strategy</span>
+            <svg class="nav-dropdown__cat-arrow" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 1 7 4 1 7"/></svg>
+            <div class="nav-dropdown__sub">
+              <div class="nav-dropdown__sub-inner">
+              <a href="aitai.html">AITAI</a>
+              </div>
+            </div>
+          </div>
+          <div class="nav-dropdown__cat">
+            <span>Poetry</span>
+            <svg class="nav-dropdown__cat-arrow" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 1 7 4 1 7"/></svg>
+            <div class="nav-dropdown__sub">
+              <div class="nav-dropdown__sub-inner">
+              <a href="epistles.html">Love Epistles &amp; Journal Entries</a>
+              </div>
+            </div>
+          </div>
+          <div class="nav-dropdown__cat">
+            <span>Video Editing</span>
+            <svg class="nav-dropdown__cat-arrow" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 1 7 4 1 7"/></svg>
+            <div class="nav-dropdown__sub">
+              <div class="nav-dropdown__sub-inner">
+              <a href="peachie.html">Peachie</a>
+              <a href="personal-docs.html">Personal Documentations</a>
+              </div>
+            </div>
+          </div>
+          <div class="nav-dropdown__cat">
+            <span>Graphic Design</span>
+            <svg class="nav-dropdown__cat-arrow" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 1 7 4 1 7"/></svg>
+            <div class="nav-dropdown__sub">
+              <div class="nav-dropdown__sub-inner">
+              <a href="brand-stories.html">Brand Stories</a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="archive.html" class="nav-link">Archive</a>
+      <a href="testimonials.html" class="nav-link">Testimonials</a>
+      <a href="contact.html" class="nav-link nav-link--cta">Contact</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO / INTRO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-blob" id="heroBlob" aria-hidden="true"></div>
+
+    <div class="hero-inner reveal">
+      <h1 class="hero-title">
+        <span>Unraveling The</span>
+        <span>Poetics Of</span>
+        <span class="hero-title__accent">Identity</span>
+      </h1>
+      <p class="hero-lede">
+        As emotional and intentional storytelling re-emerge in the marketing scene, I have made it
+        my purpose in life to reenact your tale like no other.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#work" class="btn btn--primary magnetic">See my work</a>
+        <a href="contact.html" class="btn btn--ghost magnetic">Get in touch</a>
+      </div>
+    </div>
+
+    <a href="#forte" class="scroll-badge" aria-label="Scroll to explore">
+      <svg class="scroll-badge__ring" viewBox="0 0 120 120">
+        <defs>
+          <path id="scrollCirclePath" d="M60,60 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0" />
+        </defs>
+        <text font-size="9.5" letter-spacing="3">
+          <textPath href="#scrollCirclePath">SCROLL TO EXPLORE • SCROLL TO EXPLORE • </textPath>
+        </text>
+      </svg>
+      <span class="scroll-badge__arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v16M12 20l-6-6M12 20l6-6"/></svg>
+      </span>
+    </a>
+  </section>
+
+  <!-- ============ FORTE / SKILLS MARQUEE ============ -->
+  <section class="forte" id="forte">
+    <div class="forte-blob" aria-hidden="true"></div>
+    <p class="forte-heading reveal">What I bring to the table</p>
+
+    <div class="marquee marquee--left">
+      <div class="marquee-track">
+        <span>Copywriting</span><span>Video Editing</span><span>Graphic Design</span><span>Poetry</span>
+        <span>Marketing Strategy</span><span>Content Creation</span><span>Brand Story</span>
+        <span>Copywriting</span><span>Video Editing</span><span>Graphic Design</span><span>Poetry</span>
+        <span>Marketing Strategy</span><span>Content Creation</span><span>Brand Story</span>
+      </div>
+    </div>
+    <div class="marquee marquee--right">
+      <div class="marquee-track">
+        <span>Capcut</span><span>Canva</span><span>Adobe Illustrator</span><span>Ibis Paint X</span>
+        <span>Capcut</span><span>Canva</span><span>Adobe Illustrator</span><span>Ibis Paint X</span>
+        <span>Capcut</span><span>Canva</span><span>Adobe Illustrator</span><span>Ibis Paint X</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <h2 class="section-title section-title--script reveal">A little about <strong>Me</strong></h2>
+
+      <div class="about-grid">
+        <div class="about-media reveal">
+          <div class="about-photo">
+            <!-- Replace this div's content with an <img src="assets/your-photo.jpg" alt="Nichia Marjono"> -->
+            <img src="assets/140130_f210116864.jpg" alt="Nichia Marjono">
+          </div>
+
+          <p class="about-photo__caption">
+            <span class="about-photo__caption-label">Background</span>
+            UWA's Bachelor of Science, Biochemistry and Molecular Biology, Business Management
+          </p>
+
+          <div class="stats-row">
+            <div class="stat">
+              <span class="stat__num" data-target="2">0</span>
+              <span class="stat__label">years of experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num" data-target="50" data-suffix="+">0</span>
+              <span class="stat__label">compositions handed</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num" data-target="10" data-suffix="+">0</span>
+              <span class="stat__label">pleased individuals and organizations</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-copy reveal">
+          <p class="about-copy__lead">
+            A daughter, a sister, a friend, but above all: a writer anchored towards love and verity.
+          </p>
+          <p>
+            Commencing 2026 with a degree in science, you would think that scientific disquisition is
+            my true calling. Yet, there was something uncanny about how I was always drawn to a plain
+            pen and paper, continuously at the disposal of anyone whose narrative is too captivating to
+            remain unnoticed.
+          </p>
+          <p>
+            In 2021, at the peak of quarantine, I discovered the existence of virtual rental lovers, and
+            life was never the same afterwards. I built an agency, and they were what I would describe
+            as a remarkable kind of family. Then, in extension, I made further income out of writing
+            love letters, diary entries, biographies, and plenty of other publicized contents under the
+            impression of others. Today, stepping back into the passion of it, I long to do the same —
+            but instead of for love, I do it for you to sound more you.
+          </p>
+          <p class="about-copy__quote">"My soul was once yours, but my virtues shall stay—always."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="work" id="work">
+    <div class="work-blob" aria-hidden="true"></div>
+    <div class="section-inner">
+      <p class="eyebrow eyebrow--script reveal">Selected work</p>
+      <h2 class="section-title reveal">Projects</h2>
+
+      <div class="work-grid">
+
+        <a href="aitai.html" class="project-card reveal">
+          <div class="project-card__media">
+            <span>+ project image</span>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__tag">Copywriting, Marketing Strategy</span>
+            <h3 class="project-card__title">Australian Institute of Transformation and AI (AITAI)</h3>
+            <p class="project-card__desc">Coordinated and executed marketing strategy across company LinkedIn and website.</p>
+            <span class="project-card__link">View project →</span>
+          </div>
+        </a>
+
+        <a href="ppia.html" class="project-card reveal">
+          <div class="project-card__media">
+            <span>+ project image</span>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__tag">Copywriting</span>
+            <h3 class="project-card__title">Indonesian Student Association in Australia (PPIA)</h3>
+            <p class="project-card__desc">Led and created educational contents for incoming and current Indonesian international university students.</p>
+            <span class="project-card__link">View project →</span>
+          </div>
+        </a>
+
+        <a href="epistles.html" class="project-card reveal">
+          <div class="project-card__media">
+            <span>+ project image</span>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__tag">Poetry</span>
+            <h3 class="project-card__title">Love Epistles and Open Journal Entries</h3>
+            <p class="project-card__desc">Composed off-the-shelf and personalized content for virtual individuals to strengthen their personal brand.</p>
+            <span class="project-card__link">View project →</span>
+          </div>
+        </a>
+
+        <a href="peachie.html" class="project-card reveal">
+          <div class="project-card__media">
+            <span>+ project image</span>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__tag">Video Editing</span>
+            <h3 class="project-card__title">Peachie — Wedding Content Creator</h3>
+            <p class="project-card__desc">Tailored riveting advertisements from existing video clips.</p>
+            <span class="project-card__link">View project →</span>
+          </div>
+        </a>
+
+        <a href="personal-docs.html" class="project-card reveal">
+          <div class="project-card__media">
+            <span>+ project image</span>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__tag">Video Editing</span>
+            <h3 class="project-card__title">Personal Documentations</h3>
+            <p class="project-card__desc">Showcasing my profound passion to capture all the life around me, including happy tummies and loved ones.</p>
+            <span class="project-card__link">View project →</span>
+          </div>
+        </a>
+
+        <a href="brand-stories.html" class="project-card reveal">
+          <div class="project-card__media">
+            <span>+ project image</span>
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__tag">Graphic Design</span>
+            <h3 class="project-card__title">Brand Stories</h3>
+            <p class="project-card__desc">Aided local small businesses and passion projects discover their voice.</p>
+            <span class="project-card__link">View project →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY / PROBLEM ============ -->
+  <section class="why" id="why">
+    <div class="section-inner">
+      <p class="eyebrow eyebrow--script eyebrow--light reveal">The why</p>
+      <h2 class="why-statement reveal">In this day and age, visibility needs tangibility.</h2>
+      <p class="why-body reveal">
+        My childhood did not allow me to fully express myself, and writing my heart out altered the
+        course of my life. Having lived in the shoes of a struggling minstrel, I know how difficult it
+        can be to articulate your thoughts into a cohesive story. Thus, it is my wish to ease your
+        process of making the intangible tangible.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT (teaser — full page + form at contact.html) ============ -->
+  <section class="contact" id="contact">
+    <div class="section-inner reveal">
+      <p class="eyebrow eyebrow--script eyebrow--light">Let's talk</p>
+      <h2 class="contact-title">If this resonates with you,<br>Let's get in touch.</h2>
+
+      <a href="contact.html" class="btn btn--primary contact-cta magnetic">Get in touch</a>
+
+      <div class="social-row">
+        <a href="mailto:catarinichia.marjono@gmail.com" class="social-icon" aria-label="Email" title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v11A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5v-11Z"/><path d="m4 7 8 6 8-6"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/nichiamarjono/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5v6M7.5 7.5v.01M12 16.5v-3.75a2.25 2.25 0 0 1 4.5 0V16.5M12 12.75v3.75"/></svg>
+        </a>
+        <a href="http://www.instagram.com/etoilepoche" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+        <a href="https://medium.com/@etoilep" target="_blank" rel="noopener" class="social-icon" aria-label="Medium" title="Medium">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.38-2.88-3.38-6.42s1.51-6.42 3.38-6.42 3.38 2.88 3.38 6.42zM24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Nichia Marjono. Built with care.</p>
+    </footer>
+  </section>
+
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
