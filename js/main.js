@@ -167,17 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---- Numbered tiles: video autoplay + loop while the number is hovered ---
-  document.querySelectorAll('.num-tile').forEach(tile => {
-    const video = tile.querySelector('.tile-video');
-    if (!video) return;
-    const play = () => video.play().catch(() => {});
-    const stop = () => { video.pause(); video.currentTime = 0; };
-    tile.addEventListener('mouseenter', play);
-    tile.addEventListener('mouseleave', stop);
-    tile.addEventListener('focus', play);
-    tile.addEventListener('blur', stop);
-  });
+  // ---- Numbered tiles with video: hover still reveals the card (CSS handles
+  // that), but playback with sound needs a real click — browsers block
+  // autoplaying unmuted video from a hover event. Each <video> has native
+  // `controls` so visitors start it themselves.
 
   // ---- Contact page: enquiry form (Formspree) -----------------------------
   const enquiryForm = document.getElementById('enquiryForm');
