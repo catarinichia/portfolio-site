@@ -554,7 +554,7 @@ ul{ margin:0; padding:0; list-style:none; }
    number and it fades into the torn-paper card assigned to it.
    ========================================================================== */
 .numbered-grid{
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  display: grid; grid-template-columns: repeat(2, 1fr);
   gap: clamp(3rem, 6vw, 5rem) clamp(2.5rem, 5vw, 4rem);
 }
 .num-tile{
@@ -791,6 +791,7 @@ ul{ margin:0; padding:0; list-style:none; }
   .archive-grid{ grid-template-columns: repeat(2, 1fr); grid-auto-rows: 130px; }
   .stats-row{ gap: 1.6rem; }
   .form-row{ grid-template-columns: 1fr; }
+  .numbered-grid{ grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
 }
 
 @media (max-width: 480px){
