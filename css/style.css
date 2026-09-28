@@ -657,6 +657,41 @@ ul{ margin:0; padding:0; list-style:none; }
 }
 .torn-card--video{ padding: .6rem .6rem 1.6rem; }
 
+/* Written Pieces (archive) — the tile stays paper-shaped at rest; only
+   the content inside crossfades from the number to the poem on hover. */
+.numbered-grid--tri{
+  grid-template-columns: repeat(3, 1fr);
+}
+.torn-card__swap{
+  position: relative;
+  flex: 1;
+  display: flex;
+}
+.torn-card__number{
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-style: italic; font-weight: 400;
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  color: var(--accent);
+  opacity: .5;
+  transition: opacity .5s var(--ease);
+}
+.torn-card__poem-wrap{
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center; gap: .5rem;
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity .5s var(--ease);
+}
+.torn-card__poem-wrap .torn-card__poem{
+  font-size: clamp(.72rem, 1.3vw, .88rem);
+  line-height: 1.5;
+}
+.num-tile--paper:hover .torn-card__number,
+.num-tile--paper:focus-within .torn-card__number{ opacity: 0; }
+.num-tile--paper:hover .torn-card__poem-wrap,
+.num-tile--paper:focus-within .torn-card__poem-wrap{ opacity: 1; pointer-events: auto; }
+
 .media-subheads{ display: flex; gap: .4rem; flex-wrap: wrap; margin-top: auto; }
 .media-subheads span{
   font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
