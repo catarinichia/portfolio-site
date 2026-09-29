@@ -874,16 +874,18 @@ ul{ margin:0; padding:0; list-style:none; }
   .nav-dropdown__panel{
     position: static; opacity: 1; visibility: visible; pointer-events: auto;
     display: none; padding: .6rem 0 0 .8rem; min-width: 0; width: 100%;
+    transform: none;
   }
   .nav-dropdown__panel-inner{
     background: transparent; border: none; box-shadow: none; padding: 0;
     display: flex; flex-direction: column; gap: .2rem; transform: none;
   }
   .nav-dropdown.is-open .nav-dropdown__panel{ display: flex; }
+  .nav-dropdown__cat{ flex-wrap: wrap; }
   .nav-dropdown__cat:hover{ background: transparent; color: var(--text); }
   .nav-dropdown__sub{
     position: static; opacity: 1; visibility: visible; pointer-events: auto;
-    display: none; padding: 0;
+    display: none; padding: 0; min-width: 0; flex-basis: 100%;
   }
   .nav-dropdown__sub-inner{
     background: transparent; border: none; box-shadow: none;
