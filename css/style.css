@@ -375,7 +375,7 @@ ul{ margin:0; padding:0; list-style:none; }
 .forte{
   position: relative;
   background: var(--ink); color: var(--ivory);
-  padding: clamp(1.8rem, 4vw, 2.5rem) 0;
+  padding: clamp(1.8rem, 4vw, 2.5rem) 0 calc(clamp(2.5rem, 5vw, 3.5rem) + 3rem);
   overflow: hidden;
 }
 .forte-blob{
@@ -386,6 +386,17 @@ ul{ margin:0; padding:0; list-style:none; }
   z-index: 0;
   pointer-events: none;
   animation: blobFloat 16s ease-in-out infinite;
+}
+.forte::after{
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0; height: clamp(7rem, 16vw, 11rem);
+  background: linear-gradient(to bottom,
+    rgba(239,239,201,0) 0%,
+    rgba(239,239,201,0.35) 55%,
+    rgba(239,239,201,0.75) 80%,
+    var(--bg) 100%);
+  z-index: 2;
+  pointer-events: none;
 }
 .forte-heading{
   position: relative; z-index: 1;
@@ -415,29 +426,14 @@ ul{ margin:0; padding:0; list-style:none; }
 @keyframes marqueeRight{ from{ transform: translateX(-50%); } to{ transform: translateX(0); } }
 
 /* ==========================================================================
-   Services — continues straight on from Forte's dark block (no seam); the
-   fade down into the light About section below now sits at the bottom of
-   this section instead of Forte's.
+   Services — lives inside .forte itself (same background/blob, no seam
+   between the marquee and the cards below it).
    ========================================================================== */
-.services{
-  position: relative;
-  background: var(--ink); color: var(--ivory);
-  padding: clamp(2.5rem, 5vw, 3.5rem) 0 calc(clamp(2.5rem, 5vw, 3.5rem) + 3rem);
-  overflow: hidden;
+.services-inner{
+  position: relative; z-index: 1;
+  margin-top: clamp(1.6rem, 3vw, 2.2rem);
   text-align: center;
 }
-.services::after{
-  content: "";
-  position: absolute; left: 0; right: 0; bottom: 0; height: clamp(7rem, 16vw, 11rem);
-  background: linear-gradient(to bottom,
-    rgba(239,239,201,0) 0%,
-    rgba(239,239,201,0.35) 55%,
-    rgba(239,239,201,0.75) 80%,
-    var(--bg) 100%);
-  z-index: 2;
-  pointer-events: none;
-}
-.services > .section-inner{ position: relative; z-index: 1; }
 .services-grid{
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: clamp(1.5rem, 3vw, 2rem);
