@@ -657,8 +657,11 @@ ul{ margin:0; padding:0; list-style:none; }
 }
 .torn-card--video{ padding: .6rem .6rem 1.6rem; }
 
-/* Written Pieces (archive) — the tile stays paper-shaped at rest; only
-   the content inside crossfades from the number to the poem on hover. */
+/* Written Pieces (archive) — the tile stays paper-shaped at rest, showing
+   just the number. On hover/focus it grows into its own bigger paper card
+   (a sibling of .torn-card, so it isn't clipped by the small tile's own
+   clip-path) large enough to read the full poem without cutting it off;
+   overflow-y stays as a safety net for the handful of longest pieces. */
 .numbered-grid--tri{
   grid-template-columns: repeat(3, 1fr);
 }
@@ -674,23 +677,48 @@ ul{ margin:0; padding:0; list-style:none; }
   font-size: clamp(2.4rem, 4vw, 3.2rem);
   color: var(--accent);
   opacity: .5;
-  transition: opacity .5s var(--ease);
-}
-.torn-card__poem-wrap{
-  position: absolute; inset: 0;
-  display: flex; flex-direction: column; justify-content: center; gap: .5rem;
-  overflow-y: auto;
-  opacity: 0;
-  transition: opacity .5s var(--ease);
-}
-.torn-card__poem-wrap .torn-card__poem{
-  font-size: clamp(.72rem, 1.3vw, .88rem);
-  line-height: 1.5;
+  transition: opacity .4s var(--ease);
 }
 .num-tile--paper:hover .torn-card__number,
 .num-tile--paper:focus-within .torn-card__number{ opacity: 0; }
+
+.torn-card__poem-wrap{
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 100%; height: 100%; max-height: 100%;
+  transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; justify-content: center; gap: .5rem;
+  padding: 1.3rem 1.2rem 10%;
+  background: var(--bg-card);
+  color: var(--text);
+  text-align: center;
+  box-shadow: 0 20px 40px -18px rgba(47,27,26,.4);
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% 94%,
+    96% 98%, 92% 94.5%, 88% 98%, 84% 94.5%, 80% 98%, 76% 94.5%, 72% 98%,
+    68% 94.5%, 64% 98%, 60% 94.5%, 56% 98%, 52% 94.5%, 48% 98%, 44% 94.5%,
+    40% 98%, 36% 94.5%, 32% 98%, 28% 94.5%, 24% 98%, 20% 94.5%, 16% 98%,
+    12% 94.5%, 8% 98%, 4% 94.5%, 0% 98%
+  );
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+  /* height/max-height snap instantly (CSS can't smoothly animate to/from
+     'auto') — only opacity and width transition. */
+  transition: opacity .4s var(--ease), width .4s var(--ease);
+}
+.torn-card__poem-wrap .torn-card__poem{
+  font-size: clamp(.8rem, 1.3vw, .95rem);
+  line-height: 1.55;
+}
 .num-tile--paper:hover .torn-card__poem-wrap,
-.num-tile--paper:focus-within .torn-card__poem-wrap{ opacity: 1; pointer-events: auto; }
+.num-tile--paper:focus-within .torn-card__poem-wrap{
+  opacity: 1; pointer-events: auto; z-index: 20;
+  width: clamp(280px, 34vw, 460px);
+  height: auto;
+  max-height: min(84vh, 650px);
+}
 
 .media-subheads{ display: flex; gap: .4rem; flex-wrap: wrap; margin-top: auto; }
 .media-subheads span{
