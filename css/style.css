@@ -682,7 +682,13 @@ ul{ margin:0; padding:0; list-style:none; }
 .torn-card--stack{ flex-direction: row; gap: .5rem; }
 .torn-card--stack .torn-card__media{ font-size: .68rem; }
 
-.torn-card--poem{ justify-content: center; text-align: center; }
+.torn-card--poem{
+  justify-content: safe center; text-align: center;
+  /* justify-content:center + overflow can otherwise strand the start of
+     the text out of scroll reach; "safe" falls back to flex-start when
+     the content doesn't fit, so scrolling always reaches the top. */
+  overflow-y: auto;
+}
 .torn-card__poem{
   font-family: var(--font-script); font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.5;
   color: var(--text);
@@ -695,11 +701,11 @@ ul{ margin:0; padding:0; list-style:none; }
 }
 .torn-card--video{ padding: .6rem .6rem 1.6rem; }
 
-/* Written Pieces (archive) — the tile stays paper-shaped at rest, showing
-   just the number. On hover/focus it grows into its own bigger paper card
-   (a sibling of .torn-card, so it isn't clipped by the small tile's own
-   clip-path) large enough to read the full poem without cutting it off;
-   overflow-y stays as a safety net for the handful of longest pieces. */
+/* Written Pieces (archive) -- the tile stays paper-shaped at rest, showing
+   just the number. On hover/focus the poem fades in at the same size as
+   the tile itself (no growing or popping out) and scrolls internally if
+   the piece runs longer than the card, same as every other poem card
+   site-wide. */
 .numbered-grid--tri{
   grid-template-columns: repeat(3, 1fr);
 }
@@ -721,11 +727,8 @@ ul{ margin:0; padding:0; list-style:none; }
 .num-tile--paper:focus-within .torn-card__number{ opacity: 0; }
 
 .torn-card__poem-wrap{
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 100%; height: 100%; max-height: 100%;
-  transform: translate(-50%, -50%);
-  display: flex; flex-direction: column; justify-content: center; gap: .5rem;
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: safe center; gap: .5rem;
   padding: 1.3rem 1.2rem 10%;
   background: var(--bg-card);
   color: var(--text);
@@ -742,20 +745,15 @@ ul{ margin:0; padding:0; list-style:none; }
   opacity: 0;
   pointer-events: none;
   z-index: 5;
-  /* height/max-height snap instantly (CSS can't smoothly animate to/from
-     'auto') — only opacity and width transition. */
-  transition: opacity .4s var(--ease), width .4s var(--ease);
+  transition: opacity .4s var(--ease);
 }
 .torn-card__poem-wrap .torn-card__poem{
-  font-size: clamp(.8rem, 1.3vw, .95rem);
-  line-height: 1.55;
+  font-size: clamp(.78rem, 1.3vw, .9rem);
+  line-height: 1.5;
 }
 .num-tile--paper:hover .torn-card__poem-wrap,
 .num-tile--paper:focus-within .torn-card__poem-wrap{
   opacity: 1; pointer-events: auto; z-index: 20;
-  width: clamp(280px, 34vw, 460px);
-  height: auto;
-  max-height: min(84vh, 650px);
 }
 
 .media-subheads{ display: flex; gap: .4rem; flex-wrap: wrap; margin-top: auto; }
